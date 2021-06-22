@@ -21,3 +21,8 @@ echo "Generating bashrc..."
     "pyenv/bin/pyenv" init - &&
     "$HOME/.poetry/bin/poetry" completions bash
 ) > add.bashrc
+
+echo "Configuring direnv..."
+direnv_conf="$HOME/.config/direnv/direnvrc"
+mkdir -p "$(dirname "$direnv_conf")"
+[ -e "$direnv_conf" ] || ln -s "$BLOKSH_PATH/direnvrc" "$direnv_conf"
