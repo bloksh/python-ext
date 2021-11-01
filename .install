@@ -23,6 +23,6 @@ echo "Generating bashrc..."
 ) > add.bashrc
 
 echo "Configuring direnv..."
-direnv_conf="$HOME/.config/direnv/direnvrc"
-mkdir -p "$(dirname "$direnv_conf")"
-[ -e "$direnv_conf" ] || ln -s "$BLOKSH_PATH/direnvrc" "$direnv_conf"
+direnv_conf_dir="$HOME/.config/direnv/lib"
+mkdir -p "$direnv_conf_dir"
+ln -sf "$BLOKSH_PATH/direnv_poetry.sh" "$direnv_conf_dir/poetry.sh"
